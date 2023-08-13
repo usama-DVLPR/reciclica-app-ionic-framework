@@ -12,47 +12,32 @@
     <ion-item color="success">
       <ion-avatar slot="start">
         <img
-          src="https://randomuser.me/api/portraits/women/82.jpg"
+          src="https://randomuser.me/api/portraits/women/29.jpg"
           alt="user-image"
         />
       </ion-avatar>
       <ion-label>
-        <h1>Usama Hameed</h1>
+        <h1>Jenny Mitchelle</h1>
         <p>Gathered: <span class="money">$ 15,00</span></p>
       </ion-label>
     </ion-item>
   </ion-list>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Last pickup call</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="hourglass-outline"
-          slot="start"
-          color="warning"
-        ></ion-icon>
-        <ion-label>
-          On hold
-          <p>12/08/2023 16:04:00</p>
-        </ion-label>
-      </ion-item>
+  <!-- <app-pickup-call-card [hasHeader]="true" [hasFooter]="true"></app-pickup-call-card> -->
 
-      <ion-item lines="none">
-        <ion-label
-          ><p>Created at 11/02/2023</p>
-          <p>
-            Notes: we have two bages that are full, one with plastic and the
-            other one with glasses.
-          </p></ion-label
-        >
-      </ion-item>
-      <ion-button color="success" fill="clear" size="full"
-        >See all...</ion-button
-      >
-    </ion-card-content>
-  </ion-card>
+  <app-pickup-call-card
+  [hasHeader]="true"
+  [hasFooter]="true"
+
+  status="hold"
+  updatedAt="12/08/2023 16:04"
+  createdAt="11/02/2023 16:20"
+  notes=" we have two bages that are full, one with plastic and the
+  other one with glasses."
+></app-pickup-call-card>
+
+
+
+
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button color="success">
       <ion-icon name="add"></ion-icon

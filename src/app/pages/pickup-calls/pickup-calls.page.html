@@ -8,79 +8,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="hourglass-outline"
-          slot="start"
-          color="warning"
-        ></ion-icon>
-        <ion-label>
-          On hold
-          <p>12/08/2023 16:04:00</p>
-        </ion-label>
-      </ion-item>
+  <app-pickup-call-card
+    [hasHeader]="false"
+    [hasFooter]="false"
 
-      <ion-item lines="none">
-        <ion-label
-          ><p>Created at 11/02/2023</p>
-          <p>
-            Notes: we have two bages that are full, one with plastic and the
-            other one with glasses.
-          </p></ion-label
-        >
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+    status="hold"
+    updatedAt="13/08/2023 16:20"
+    createdAt="12/08/2023 16:20"
+    notes="we have two bages that are full, one with plastic and the
+other one with glasses."
+  ></app-pickup-call-card>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="archive-outline"
-          slot="start"
-          color="secondary"
-        ></ion-icon>
-        <ion-label>
-          Processing
-          <p>11/08/2023 18:04:00</p>
-        </ion-label>
-      </ion-item>
+  <app-pickup-call-card
+    [hasHeader]="false"
+    [hasFooter]="false"
+    status="processing"
+    updatedAt="12/08/2023 16:20"
+    createdAt="11/08/2023 16:20"
+    notes="A pair of stuffed bags, one carrying plastic, the other brimming with glass."
+  ></app-pickup-call-card>
 
-      <ion-item lines="none">
-        <ion-label
-          ><p>Created at 11/02/2023</p>
-          <p>
-            Notes: we have two bages that are full, one with plastic and the
-            other one with glasses.
-          </p></ion-label
-        >
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+  <app-pickup-call-card
+    [hasHeader]="false"
+    [hasFooter]="false"
+    status="finished"
+    updatedAt="13/08/2023 18:20"
+    createdAt="11/08/2023 19:20"
+    amount="15,00"
+  ></app-pickup-call-card>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon
-          name="checkmark-circle-outline"
-          slot="start"
-          color="primary"
-        ></ion-icon>
-        <ion-label>
-          Finished
-          <p>11/08/2023 20:04:00</p>
-        </ion-label>
-      </ion-item>
 
-      <ion-item lines="none">
-        <ion-label><p>Created at 11/02/2023</p> </ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-icon name="trophy" slot="start" color="success"></ion-icon>
-        <ion-label color="success">$ 15,00</ion-label>
-      </ion-item>
-    </ion-card-content>
-  </ion-card>
+
+  
 </ion-content>
