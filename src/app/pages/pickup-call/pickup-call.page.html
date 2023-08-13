@@ -6,27 +6,32 @@
     <ion-title>Pickup call</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content [fullscreen]="true">
+  <img
+    src="https://k8q3f6p8.rocketcdn.me/wp-content/uploads/2019/05/Google-Maps-Tips.png"
+    alt="map-image"
+  />
 
-<ion-content [fullscreen]="true"> 
- <img src="https://k8q3f6p8.rocketcdn.me/wp-content/uploads/2019/05/Google-Maps-Tips.png" alt="map-image"/>
+  <ion-card>
+    <ion-card-content>
+      <p>Address: Fake street, 11</p>
+      <p>Complement: Apto 222</p>
+      <p>Neighborhood: neighborhood</p>
+      <p>Zip code: 4500</p>
+      <p>City name - Dunwich</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item lines="inset">
+      <ion-textarea
+        label="Notes"
+        labelPlacement="floating"
+        placeholder="Enter text"
+      ></ion-textarea>
+    </ion-item>
+  </ion-list>
 
- <ion-card>
-  <ion-card-content>
-    <p>Address: Fake street, 11</p>
-    <p>Complement: Apto 222</p>
-    <p>Neighborhood: neighborhood</p>
-    <p>Zip code: 4500</p>
-    <p>City name - Dunwich</p>
-  </ion-card-content>
- </ion-card>
- <ion-list>
-  <ion-item lines="inset">
-    <ion-label position="floating">
-      Notes
-    </ion-label>
-    <ion-textarea></ion-textarea>
-  </ion-item>
- </ion-list>
-
- <ion-button expand="full" color="success">Create Pickup call</ion-button>
+  <ion-button expand="full" color="success" (click)="createPickupCall()"
+    >Create Pickup call</ion-button
+  >
 </ion-content>

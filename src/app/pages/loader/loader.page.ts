@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loader',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./loader.page.scss'],
 })
 export class LoaderPage implements OnInit {
-
-  constructor() { }
+  constructor(private _router: Router) {}
 
   ngOnInit() {
+    setTimeout(() => {
+      this.navigate();
+    }, 3000);
   }
 
+  navigate() {
+    this._router.navigate(['/login']);
+  }
 }

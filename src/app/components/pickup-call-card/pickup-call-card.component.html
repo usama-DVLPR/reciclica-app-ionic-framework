@@ -1,7 +1,5 @@
 <ion-card>
-  <ion-card-header *ngIf="hasHeader">
-    <ion-card-subtitle>Last pickup call</ion-card-subtitle>
-  </ion-card-header>
+  <ng-content select="[header]"></ng-content>
   <ion-card-content>
     <ion-item lines="none">
       <!-- icons  -->
@@ -51,8 +49,8 @@
     </ion-item>
 
 
-    <ion-button *ngIf="hasFooter" color="success" fill="clear" size="full"
-      >See all...</ion-button
-    >
+    
   </ion-card-content>
+  <ng-content select="[footer]"></ng-content>
+
 </ion-card>
