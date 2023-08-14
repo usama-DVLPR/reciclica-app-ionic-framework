@@ -7,57 +7,45 @@
         </ion-card-header>
 
         <ion-card-content>
-          <ion-item>
             <ion-input
-            required
+            fill="outline"
               label="Email"
               labelPlacement="floating"
               placeholder="jhon@mail.com"
               formControlName="email"
             ></ion-input>
-          </ion-item>
           <!-- error messages  -->
-         <ion-item lines="none" 
-         *ngIf="form.get('email').touched && form.get('email').errors?.['required']"
 
-         >
-          <ion-label 
-          class="error__field"
-          color="danger"
-          >Email is mandatory</ion-label
-        >
-         </ion-item>
-         <ion-item lines="none" 
-         *ngIf="form.get('email').touched && form.get('email').errors?.['email']"
-
-         >
-          <ion-label 
-          class="error__field"
-          color="danger"
-          >Please enter valid EMAIL</ion-label
-        >
-         </ion-item>
-          <ion-item>
+          <app-error-message
+            [field]="form.get('email')"
+            message="Email is mandatory"
+            error="required"
+          ></app-error-message>
+          <app-error-message
+            [field]="form.get('email')"
+            message="Please enter valid EMAIL"
+            error="email"
+          ></app-error-message>
+        
+        
             <ion-input
+            fill="outline"
               label="password"
               labelPlacement="floating"
               placeholder="*****"
               type="password"
               formControlName="password"
             ></ion-input>
-          </ion-item>
+          
 
           <!-- error messages  -->
-          <ion-item lines="none" 
-          *ngIf="form.get('password').touched && form.get('password').errors?.['required']"
- 
-          >
-           <ion-label 
-           class="error__field"
-           color="danger"
-           >Password required</ion-label
-         >
-          </ion-item>
+
+          <app-error-message
+          message="Password is required"
+          [field]="form.get('password')"
+          error="required"
+          ></app-error-message>
+          
           <ion-button color="dark" expand="full" fill="clear"
             >Forgot email/password</ion-button
           >
