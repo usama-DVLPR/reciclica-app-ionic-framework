@@ -1,36 +1,83 @@
 <ion-content [fullscreen]="true">
   <div class="flex__center">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title color="success">Reciclica</ion-card-title>
-        <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-      </ion-card-header>
+    <form [formGroup]="form" class="login__form">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="success">Reciclica</ion-card-title>
+        </ion-card-header>
 
-      <ion-card-content>
-        <ion-item>
-          <!-- <ion-input
-            label="Email"
-            labelPlacement="floating"
-            placeholder="jhon@mail.com"
-            type="email"
-          ></ion-input> -->
-          <ion-input label="Email" labelPlacement="floating" placeholder="jhon@mail.com"></ion-input>
-        </ion-item>
+        <ion-card-content>
+          <ion-item>
+            <ion-input
+            required
+              label="Email"
+              labelPlacement="floating"
+              placeholder="jhon@mail.com"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+          <!-- error messages  -->
+         <ion-item lines="none" 
+         *ngIf="form.get('email').touched && form.get('email').errors?.['required']"
 
-        <ion-item>
-          <ion-input
-            label="password"
-            labelPlacement="floating"
-            placeholder="*****"
-            type="password"
-          ></ion-input>
-        </ion-item>
-        <ion-button color="dark" expand="full" fill="clear" >Forgot email/password</ion-button>
+         >
+          <ion-label 
+          class="error__field"
+          color="danger"
+          >Email is mandatory</ion-label
+        >
+         </ion-item>
+         <ion-item lines="none" 
+         *ngIf="form.get('email').touched && form.get('email').errors?.['email']"
 
-        <ion-button color="success" expand="full" (click)="login()">Login</ion-button>
-        <ion-button color="success" expand="full" fill="clear" (click)="register()" >register</ion-button>
+         >
+          <ion-label 
+          class="error__field"
+          color="danger"
+          >Please enter valid EMAIL</ion-label
+        >
+         </ion-item>
+          <ion-item>
+            <ion-input
+              label="password"
+              labelPlacement="floating"
+              placeholder="*****"
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
 
-      </ion-card-content>
-    </ion-card>
+          <!-- error messages  -->
+          <ion-item lines="none" 
+          *ngIf="form.get('password').touched && form.get('password').errors?.['required']"
+ 
+          >
+           <ion-label 
+           class="error__field"
+           color="danger"
+           >Password required</ion-label
+         >
+          </ion-item>
+          <ion-button color="dark" expand="full" fill="clear"
+            >Forgot email/password</ion-button
+          >
+
+          <ion-button
+            color="success"
+            expand="full"
+            (click)="login()"
+            [disabled]="!form.valid"
+            >Login</ion-button
+          >
+          <ion-button
+            color="success"
+            expand="full"
+            fill="clear"
+            (click)="register()"
+            >register</ion-button
+          >
+        </ion-card-content>
+      </ion-card>
+    </form>
   </div>
 </ion-content>

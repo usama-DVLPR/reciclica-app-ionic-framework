@@ -1,8 +1,14 @@
-ion-button[color='dark']{
-    text-transform: initial;
+ion-button[color="dark"] {
+  text-transform: initial;
 }
 
+ion-content {
+  --background: var(--ion-color-success);
+}
+.login__form {
+  width: 100%;
+}
 
-ion-content{
-    --background: var(--ion-color-success);
+.error__field {
+  font-size: 14px;
 }
